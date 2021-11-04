@@ -7,6 +7,7 @@ This is a Unity Prototype-project created for an introductory course on Unity, u
 ## Summary
 
   - [Getting Started](#getting-started)
+  - [Funny Pictures](#funny-pictures)
   - [Preriquisites](#preriquisites)
   - [Installing](#installing)
   - [Built With](#built-with)
@@ -18,6 +19,18 @@ This is a Unity Prototype-project created for an introductory course on Unity, u
 ## Getting Started
 
 The project is currently not being built. To run it, simply clone or download the repo and open it in the Unity-Editor.
+
+## Funny Pictures
+
+Some funny pictures have been added to this repo in the early stages of the project to have some fun. They were chosesn through a tedious process of picture-choosing, whis is described here:
+
+1. Opened the google search-engine at https://www.google.com
+2. Typed in the term "Funny Pictures"
+3. Chose the "Pictures"-Category in an attempt to find pictures
+4. Downloaded the first five pictures shown
+5. Created a Folder called "funnypicturestocommit" in the project
+6. moved the downloaded pictures (described in more detail in steps 1 through 4) into said folder
+7. named them "funnypicture0*.jpg (*corresponding to a set of whole numbers between 0 and 5, excluding 0 and including 5 and consisting of five entries)
 
 ### Prerequisites
 
@@ -44,7 +57,7 @@ This project is currently not open for contributions. If you would really really
 
 
   - **Willi Bücking** - *Changed README Template to accurately reflect the state of this specific repo.* -
-    [PurpleBooth](https://github.com/PurpleBooth)
+ 
 
 ## License
 
