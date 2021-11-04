@@ -7,11 +7,10 @@ This is a Unity Prototype-project created for an introductory course on Unity, u
 ## Summary
 
   - [Getting Started](#getting-started)
-  - [Runing the tests](#running-the-tests)
-  - [Deployment](#deployment)
+  - [Preriquisites](#preriquisites)
+  - [Installing](#installing)
   - [Built With](#built-with)
   - [Contributing](#contributing)
-  - [Versioning](#versioning)
   - [Authors](#authors)
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
