@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PrototypeDebug : MonoBehaviour
 {
-    int Count = 1;
-    bool SpamInitComplete = false;
+    int count = 1;
+    bool spamInitComplete = false;
     // Start is called before the first frame update
     void Start()
     {   
@@ -15,50 +15,50 @@ public class PrototypeDebug : MonoBehaviour
 
     IEnumerator SpamInit()
     {
-        int Countdown = 5;
-        int CheckCountdown = 3;
+        int countdown = 5;
+        int checkCountdown = 3;
         yield return new WaitForSeconds(3);
         Debug.Log("Checking Console readability.");
         yield return new WaitForSeconds(1);
-        while(CheckCountdown > 0)
+        while(checkCountdown > 0)
         {
             Debug.Log(".");
             yield return new WaitForSeconds(1);
-            CheckCountdown = CheckCountdown - 1;
+            checkCountdown = checkCountdown - 1;
         }
         Debug.LogWarning("Your Console is too empty.");
         yield return new WaitForSeconds(2);
         Debug.Log("Automatic Console-Spamming Mechanism engaged.");
         yield return new WaitForSeconds(2);
-        while(Countdown > 0)
+        while(countdown > 0)
         {
-            Debug.LogWarning("Starting Spam in " + Countdown);
+            Debug.LogWarning("Starting Spam in " + countdown);
             yield return new WaitForSeconds(1);
-            Countdown = Countdown - 1;
+            countdown = countdown - 1;
         }
-        SpamInitComplete = true;
+        spamInitComplete = true;
     }
 
     // Update is called once per frame
     void Update()
     {   
-        if (SpamInitComplete == true)
+        if (spamInitComplete == true)
         {
 
-            if (Count < 500)
+            if (count < 500)
             {
-                Debug.Log("This message has already been printed " + Count + " times");
-                Count = Count + 1;
+                Debug.Log("This message has already been printed " + count + " times");
+                count = count + 1;
             }
-            else if (Count == 500)
+            else if (count == 500)
             {
                 Debug.Log("This is the 500th print.");
-                Count = Count + 1;
+                count = count + 1;
             }
-            else if (Count == 501)
+            else if (count == 501)
             {
                 StartCoroutine(SpamExit());
-                Count = Count + 1;
+                count = count + 1;
             }
         }
     
