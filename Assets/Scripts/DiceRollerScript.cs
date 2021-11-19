@@ -9,7 +9,7 @@ public class DiceRollerScript : MonoBehaviour
 
     public int[] luckyNumbers;              //players lucky numbers 
         
-    private int recentThrow;                //used for storing the last generated dice-value
+    public int recentThrow;                //used for storing the last generated dice-value
 
     private int points = 10;                //used for storing the players score
 
@@ -17,13 +17,19 @@ public class DiceRollerScript : MonoBehaviour
 
     private bool hit;
 
+
+    //uncomment this block and the one at the end of the main game-loop to recieve dice-statistics
+   /*  private int[] statistics = new int[20]; //add an array for statistics
+    private int turnNumber = 0;
+    private bool statsPrinter = true;
+ */
     void Start()
     {
         luckyNumbers = new int[3];
         Debug.Log("Welcome to the Dice-Game. Please Input your lucky numbers (between 1 and 20) on the right and press Space to continue.");
-        Debug.Log("You start with 10 points, each time the dice hits one of your lucky numbers, you win 5 points, if it doesn�t, you lose 1.");
+        Debug.Log("You start with 10 points, each time the dice hits one of your lucky numbers, you win 5 points, if it doesn`t, you lose 1.");
 
-        //Put in the following block for testing so you don�t need to manually enter numbers at every run
+        //Put in the following block for testing so you don`t need to manually enter numbers at every run
         /*
         luckyNumbers[0] = 3;
         luckyNumbers[1] = 5;
@@ -54,6 +60,8 @@ public class DiceRollerScript : MonoBehaviour
             }
             else if(Input.GetKeyDown(KeyCode.Space))    //if space bar is pressed down, dice is thrown
             {
+                //uncomment for statistics
+                //turnNumber += 1;
                 recentThrow = Random.Range(1, 21);      //the number rolled is stored in recentThrow
                 Debug.Log("You rolled a " + recentThrow);   //inform player of number rolled
                 foreach(int number in luckyNumbers)     //check if rolled number is one of the lucky numbers
@@ -76,7 +84,20 @@ public class DiceRollerScript : MonoBehaviour
                 }
                 Debug.Log("Score: " + points);      //print current score
                 //messaged = false;         //activate this if you want to remind the player to press space after each roll
+
+                //uncomment for statistics
+                //statistics[recentThrow-1] += 1;     //update statistics
             }
+
+            //uncomment this block to recieve dice-statistics
+            /* if (turnNumber >= 100 && statsPrinter == true)
+            {
+                foreach(int i in statistics)
+                {
+                    Debug.Log(i);
+                }
+                statsPrinter = false;
+            } */
         }
         if(points <= 0)     //check if loose-condition is met, if so, inform player, reset luckyNumbers and score, reset greeting-flag
         {
@@ -86,6 +107,12 @@ public class DiceRollerScript : MonoBehaviour
             numbersEntered = false;
             points = 10;
             messaged = false;       //comment this out to not greet the player again
+           
+           //uncomment this block to recieve dice-statistics after each loosing round
+           /*  foreach(int i in statistics)
+            {
+                Debug.Log(i);
+            } */
         }
         else if(points >= 20)       //check if win condition is met, if so, inform player, reset luckyNumbers and score, reset greeting-flag
         {
@@ -95,6 +122,12 @@ public class DiceRollerScript : MonoBehaviour
             numbersEntered = false;
             points = 10;
             messaged = false;       //comment this out to not greet the player again
+            
+            //uncomment this block to recieve dice-statistics after each winning round
+            /* foreach(int i in statistics)
+            {
+                Debug.Log(i);
+            } */
         }
     }
 }
