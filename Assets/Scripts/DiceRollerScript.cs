@@ -21,9 +21,9 @@ public class DiceRollerScript : MonoBehaviour
     {
         luckyNumbers = new int[3];
         Debug.Log("Welcome to the Dice-Game. Please Input your lucky numbers (between 1 and 20) on the right and press Space to continue.");
-        Debug.Log("You start with 10 points, each time the dice hits one of your lucky numbers, you win 5 points, if it doesn´t, you lose 1.");
+        Debug.Log("You start with 10 points, each time the dice hits one of your lucky numbers, you win 5 points, if it doesnï¿½t, you lose 1.");
 
-        //Put in the following block for testing so you don´t need to manually enter numbers at every run
+        //Put in the following block for testing so you donï¿½t need to manually enter numbers at every run
         /*
         luckyNumbers[0] = 3;
         luckyNumbers[1] = 5;
@@ -78,7 +78,7 @@ public class DiceRollerScript : MonoBehaviour
                 //messaged = false;         //activate this if you want to remind the player to press space after each roll
             }
         }
-        if(points == 0)     //check if loose-condition is met, if so, inform player, reset luckyNumbers and score, reset greeting-flag
+        if(points <= 0)     //check if loose-condition is met, if so, inform player, reset luckyNumbers and score, reset greeting-flag
         {
             Debug.Log("You lost.");
             Debug.Log("To play again, enter your lucky numbers.");
@@ -87,7 +87,7 @@ public class DiceRollerScript : MonoBehaviour
             points = 10;
             messaged = false;       //comment this out to not greet the player again
         }
-        else if(points == 20)       //check if win condition is met, if so, inform player, reset luckyNumbers and score, reset greeting-flag
+        else if(points >= 20)       //check if win condition is met, if so, inform player, reset luckyNumbers and score, reset greeting-flag
         {
             Debug.Log("You win.");
             Debug.Log("To play again, enter your lucky numbers.");
