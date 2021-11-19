@@ -5,24 +5,43 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
 
-    public int speed = 2;
+    public int speed = 3;
+    private bool start = false;
+    public Vector3 pos;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pos = transform.position;
+        Debug.Log(pos);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            start = true;
         }
-        else
+        if (start == true)
         {
-            transform.Translate(Vector3.back * Time.deltaTime * speed);
+            //if ()
+            //22 right, -10 left
+            if(Input.GetKey(KeyCode.Space) && transform.position.x < 22)
+            {
+                transform.Translate(Vector3.right * Time.deltaTime * speed);
+            }
+            else if(Input.GetKey(KeyCode.Space) && transform.position.x > 22)
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * speed);
+            }
+            else if(!Input.GetKey(KeyCode.Space) && transform.position.z > -10)
+            {
+                transform.Translate(Vector3.back * Time.deltaTime * speed);
+            }
+            else if(!Input.GetKey(KeyCode.Space) && transform.position.z < -10)
+            {
+                transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            }
         }
-        
     }
 }
